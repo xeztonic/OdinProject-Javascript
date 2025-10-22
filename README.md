@@ -1,0 +1,2 @@
+# OdinProject-Javascript
+Learning javascript
