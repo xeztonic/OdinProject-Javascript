@@ -40,10 +40,59 @@ function filterRangeInPlace(arr, a, b) {
     }
 }
 let arr2 = [5, 3, 8, 1];
-filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
+filterRangeInPlace(arr2, 1, 4); // removed the numbers except from 1 to 4
 console.log(arr); // [3, 1]
 
 
 // 3
 console.log('--------------------------------');
 console.log('Sort in decreasing order');
+
+let arr3 = [5, 2, 1, -10, 8];
+
+arr3.sort((a, b) => b - a)
+
+console.log(arr3); // 8, 5, 2, 1, -10
+
+// 4
+console.log('--------------------------------');
+console.log('Copy and sort array');
+
+function copySorted(arr) {
+    return arr.slice().sort();
+}
+
+let arr4 = ["HTML", "JavaScript", "CSS"];
+let sorted = copySorted(arr4);
+console.log(sorted); // CSS, HTML, JavaScript
+console.log(arr4); // HTML, JavaScript, CSS (no changes)
+
+
+// 5
+console.log('--------------------------------');
+console.log('Shuffle an array');
+function shuffle(arr) {
+    return arr.sort(() => Math.random() - 0.7);
+}
+let arr5 = [1, 2, 3];
+console.log(shuffle(arr5));
+// arr = [3, 2, 1]
+console.log(shuffle(arr5));
+// arr = [2, 1, 3]
+console.log(shuffle(arr5));
+// arr = [3, 1, 2]
+
+
+// 6
+console.log('--------------------------------');
+console.log('Filter unique array members');
+
+function unique(arr) {
+    return Array.from(new Set(arr));
+}
+
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+    "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+console.log(unique(strings)); // Hare, Krishna, :-O
